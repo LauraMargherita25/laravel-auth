@@ -3,6 +3,8 @@
 @section('pageTitle', 'Create a new post')
 
 @section('content')
+<main class="p-5">
+
     <div class="container">
         <div class="row">
             <div class="col">
@@ -35,4 +37,6 @@
             </div>
         </div>
     </div>
+
+</main>
 @endsection
