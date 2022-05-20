@@ -40125,6 +40125,38 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
+var btnSlugger = document.querySelector('#btn-slugger');
+
+if (btnSlugger) {
+  btnSlugger.addEventListener('click', function () {
+    var eleSlug = document.querySelector('#slug');
+    var title = document.querySelector('#title').value;
+    Axios.post('/admin/slugger', {
+      originalStr: title
+    }).then(function (response) {
+      eleSlug.value = response.data.slug;
+    });
+  });
+}
+
+var confirmationOverlay = document.querySelector('#confirmation-overlay');
+
+if (confirmationOverlay) {
+  document.querySelectorAll('.btn-delete').forEach(function (button) {
+    button.addEventListener('click', function () {
+      var id = this.closest('tr').dataset.id;
+      var confirmationForm = confirmationOverlay.querySelector('form');
+      var strAction = confirmationForm.dataset.base.replace('*****', id);
+      confirmationForm.action = strAction;
+      confirmationOverlay.classList.remove('d-none');
+    });
+  });
+  var btnNo = document.querySelector('#btn-no');
+  btnNo.addEventListener('click', function () {
+    confirmationForm.action = '';
+    confirmationOverlay.classList.add('d-none');
+  });
+}
 
 /***/ }),
 
