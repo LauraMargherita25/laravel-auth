@@ -14,13 +14,18 @@ class Post extends Model
     protected $fillable = ['title', 'content', 'slug'];
 
     static public function generateSlug($originalStr) {
-        $baseSlug = Str::of($originalStr)->slug('-');
+        $baseSlug = Str::slug($originalStr);
         $slug = $baseSlug;
         $_i = 1;
+
         while(self::where('slug', $slug)->first()) {
             $slug = "$baseSlug-$_i";
             $_i++;
         }
         return $slug;
+    }
+
+    public function posts() {
+        return $this->belongsTo('App\User');
     }
 }
