@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ config('app.name', 'Laravel') }} | @yield('pageTitle')</title>
+    <title>{{ config('app.name') }} | @yield('pageTitle')</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -15,8 +15,9 @@
 <body>
     @include('partials.header')
 
-    @yield('content')
-    
-    @include('partials.footer')
+    <main>
+        @yield('content')
+    </main>
+
 </body>
 </html>

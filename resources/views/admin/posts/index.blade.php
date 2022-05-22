@@ -3,7 +3,6 @@
 @section('pageTitle', 'Index')
 
 @section('content')
-<main class="p-5">
 
     <div class="container">
         @if (session('deleted'))
@@ -63,5 +62,4 @@
         </section>
     </div>
 
-</main>
 @endsection

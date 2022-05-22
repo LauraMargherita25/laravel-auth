@@ -3,7 +3,6 @@
 @section('pageTitle', $post->title)
 
 @section('content')
-<main class="p-5">
 
     <div class="container">
         <div class="row">
@@ -14,5 +13,4 @@
         </div>
     </div>
 
-</main>
 @endsection
