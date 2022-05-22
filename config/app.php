@@ -14,7 +14,7 @@ return [
     */
 
     // 'name' => env('APP_NAME', 'Laravel'),
-    'name' => 'The Booleaner',
+    'name' => 'The Booleaner', // per avere un app name con gli spazi
 
     /*
     |--------------------------------------------------------------------------
